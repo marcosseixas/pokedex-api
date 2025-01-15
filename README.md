@@ -6,7 +6,8 @@ Ahh mas você vai fazer uma api de pokemon Marcos?
 **sim**, porque? **porque eu quero.**
 
 **Finalidade da API**
-a API terá 2 serviços bem simples:
+
+A API terá 2 serviços bem simples:
 
 1. A API vai buscar no site oficial dos pokemons as informações para alimentar o banco de dados.
 
