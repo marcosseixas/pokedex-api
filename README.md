@@ -10,7 +10,7 @@ a API terá 2 serviços bem simples:
 
 1. A API vai buscar no site oficial dos pokemons as informações para alimentar o banco de dados.
 
-2. Vai servir de api REST de consulta para o frontend em serviço externo com autenticação e testes automatizados.
+2. Vai servir de api REST de consulta para o frontend em serviço externo com autenticação e testes unitários.
 
 
 ## :rocket: **Inicializando o Projeto**
