@@ -25,11 +25,11 @@ Para inicializar o host sem ter que digitar `http://localhost:80/`, siga os pass
 
 :computer: Configuração do Docker e Composer.
 
-    ```bash
+    
     docker exec -it laravel-app bash
     
     composer install
     
     php artisan key:generate
-    ```
+
 
