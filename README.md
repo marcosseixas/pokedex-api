@@ -17,6 +17,8 @@ chmod -R 777 storage
 Acesse o container da aplicação e rode o Composer:
 
 docker exec -it laravel-app bash
+
 composer install
+
 php artisan key:generate
->>>>>>> d94b365e1d3c239fbea62fa57f520dc1522d6ab3
+
