@@ -2,7 +2,7 @@
 
 **Api em Laravel para atender um front de pokedex para brincar**
 
-Ahh mas você vai fazer mais uma api de pokemon?  
+Ahh mas você vai fazer uma api de pokemon Marcos?  
 **sim**, porque? **porque eu quero.**
 
 ## :rocket: **Inicializando o Projeto**
