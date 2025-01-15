@@ -1,4 +1,4 @@
-# :pokedex: **pokedex-api**
+# pokedex pokedex-api
 
 **Api em Laravel para atender um front de pokedex para brincar**
 
