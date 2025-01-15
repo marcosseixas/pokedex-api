@@ -19,17 +19,17 @@ Para inicializar o host sem ter que digitar `http://localhost:80/`, siga os pass
 
 3. Altere as permissões do diretório storage para garantir que o Laravel consiga gravar arquivos:
 
-```bash
-chmod -R 777 storage
-```
+    ```bash
+    chmod -R 777 storage
+    ```
 
 :computer: Configuração do Docker e Composer
 
-```bash
-docker exec -it laravel-app bash
-
-composer install
-
-php artisan key:generate
-```
+    ```bash
+    docker exec -it laravel-app bash
+    
+    composer install
+    
+    php artisan key:generate
+    ```
 
