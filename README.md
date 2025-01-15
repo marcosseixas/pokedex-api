@@ -1,24 +1,35 @@
+# :pokedex: **pokedex-api**
 
-# pokedex-api
-Api em laravel para atender um front de pokedex para brincar
+**Api em Laravel para atender um front de pokedex para brincar**
 
-Ahh mas você vai fazer mais uma api de pokemon? sim, porque? porque eu quero.
+Ahh mas você vai fazer mais uma api de pokemon?  
+**sim**, porque? **porque eu quero.**
 
-Para Inicializar o host sem ter que digitar http://localhost:80/ siga abaixo.
+## :rocket: **Inicializando o Projeto**
 
-Vá para /etc/hosts e adicione 127.0.0.1 pokedex-api.local (Assim fica um pouco mais digno de se usar essa api dentro de outro projeto local).
+Para inicializar o host sem ter que digitar `http://localhost:80/`, siga os passos abaixo:
 
-use docker-compose up -d
+1. Vá para `/etc/hosts` e adicione `127.0.0.1 pokedex-api.local`.  
+   (Assim fica um pouco mais digno de se usar essa API dentro de outro projeto local).
+   
+2. Dentro da pasta do projeto, execute:
 
-dentro da pasta do projeto
+   ```bash
+   docker-compose up -d
 
+3. Altere as permissões do diretório storage para garantir que o Laravel consiga gravar arquivos:
+
+```bash
 chmod -R 777 storage
+```
 
-Acesse o container da aplicação e rode o Composer:
+:computer: Configuração do Docker e Composer
 
+```bash
 docker exec -it laravel-app bash
 
 composer install
 
 php artisan key:generate
+```
 
