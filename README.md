@@ -23,9 +23,9 @@ Para inicializar o host sem ter que digitar `http://localhost:80/`, siga os pass
     chmod -R 777 storage
     ```
 
-:computer: Configuração do Docker e Composer
+:computer: Configuração do Docker e Composer.
 
-```bash
+    ```bash
     docker exec -it laravel-app bash
     
     composer install
