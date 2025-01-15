@@ -5,6 +5,14 @@
 Ahh mas você vai fazer uma api de pokemon Marcos?  
 **sim**, porque? **porque eu quero.**
 
+**Finalidade da API**
+a API terá 2 serviços bem simples:
+
+1. A API vai buscar no site oficial dos pokemons as informações para alimentar o banco de dados.
+
+2. Vai servir de api REST de consulta para o frontend em serviço externo com autenticação e testes automatizados.
+
+
 ## :rocket: **Inicializando o Projeto**
 
 Para inicializar o host sem ter que digitar `http://localhost:80/`, siga os passos abaixo:
