@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use GuzzleHttp\Client;
+use App\Models\PokemonsModel;
 
 class CargaBancoService {
 
@@ -18,7 +19,13 @@ class CargaBancoService {
         $this->client = $client;
     }
 
-    function pokemonsPrimeiraGeracao($detailedPokemons = []) {
+    /**
+     * Pega na API da pokedex somente os pokemons da primeira geração com info de peso e imagem
+     * 
+     * @return Array
+     * 
+     */
+    function getPokemonsPrimeiraGeracao($detailedPokemons = []) {
 
         $response = $this->client->request('GET', self::API_POKEMON . 'pokemon', [
             'query' => [
@@ -37,6 +44,7 @@ class CargaBancoService {
                 $details = json_decode($pokemonsInfos->getBody(), true);
 
                 $detailedPokemons[] = [
+                    'id_pokedex' => $details['id'],
                     'nome' => $details['name'],
                     'imagem' => $details['sprites']['front_default'],
                     'peso' => $details['weight'],
@@ -51,6 +59,24 @@ class CargaBancoService {
 
     }
 
+    public function saveDBPokedex($pokemons) {
+
+        foreach($pokemons as $pokemon) {
+
+            PokemonsModel::updateOrCreate(
+                ['id_pokedex' => $pokemon['id_pokedex']],
+                [
+                    'nome' => $pokemon['nome'],
+                    'imagem' => $pokemon['imagem'],
+                    'peso' => $pokemon['peso'],
+                    'altura' => $pokemon['altura'],
+                ]
+            );
+        }
+        
+        return true;
+
+    }
 
 
 }

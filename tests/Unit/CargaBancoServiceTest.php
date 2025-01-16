@@ -37,6 +37,7 @@ class CargaBancoServiceTest extends TestCase
                     ->with('GET', 'https://pokeapi.co/api/v2/pokemon/1/')
                     ->once()
                     ->andReturn(new Response(200, [], json_encode([
+                        'id' => 1,
                         'name' => 'bulbasaur',
                         'sprites' => ['front_default' => 'bulbasaur.png'],
                         'weight' => 69,
@@ -47,6 +48,7 @@ class CargaBancoServiceTest extends TestCase
                     ->with('GET', 'https://pokeapi.co/api/v2/pokemon/2/')
                     ->once()
                     ->andReturn(new Response(200, [], json_encode([
+                        'id' => 2,
                         'name' => 'ivysaur',
                         'sprites' => ['front_default' => 'ivysaur.png'],
                         'weight' => 130,
@@ -55,16 +57,18 @@ class CargaBancoServiceTest extends TestCase
         
         $service = new CargaBancoService($mockClient);
 
-        $result = $service->pokemonsPrimeiraGeracao();
+        $result = $service->getPokemonsPrimeiraGeracao();
 
         $expected = [
             [
+                'id_pokedex' => 1,
                 'nome' => 'bulbasaur',
                 'imagem' => 'bulbasaur.png',
                 'peso' => 69,
                 'altura' => 7,
             ],
             [
+                'id_pokedex' => 2,
                 'nome' => 'ivysaur',
                 'imagem' => 'ivysaur.png',
                 'peso' => 130,
