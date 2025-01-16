@@ -27,7 +27,12 @@ class CargaBancoController {
 
             $pokemons = $this->service->pokemonsPrimeiraGercao();
 
-            return $pokemons;
+            if(!empty($pokemons)) {
+                return response()->json($pokemons, 200);
+
+            }
+            
+            return response()->json("Nenhum pokemon encontrado =(", 404);
             
 
         } catch (\Exception $e) {

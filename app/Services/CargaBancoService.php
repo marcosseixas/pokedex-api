@@ -9,18 +9,18 @@ class CargaBancoService {
     /**
      * @var Client
      */
-    protected $guzzle;
+    protected $client;
 
     const API_POKEMON = 'https://pokeapi.co/api/v2/';
 
-    public function __construct(Client $guzzle)
+    public function __construct(Client $client)
     {
-        $this->guzzle = $guzzle;
+        $this->client = $client;
     }
 
-    function pokemonsPrimeiraGercao($detailedPokemons = []) {
+    function pokemonsPrimeiraGeracao($detailedPokemons = []) {
 
-        $response = $this->guzzle->request('GET', self::API_POKEMON . 'pokemon', [
+        $response = $this->client->request('GET', self::API_POKEMON . 'pokemon', [
             'query' => [
                 'offset' => 0,
                 'limit' => 151,
@@ -33,7 +33,7 @@ class CargaBancoService {
         if (!empty($pokemons)) {
 
             foreach ($pokemons as $pokemon) {
-                $pokemonsInfos = $this->guzzle->request('GET', $pokemon['url']);
+                $pokemonsInfos = $this->client->request('GET', $pokemon['url']);
                 $details = json_decode($pokemonsInfos->getBody(), true);
 
                 $detailedPokemons[] = [
@@ -44,10 +44,10 @@ class CargaBancoService {
                 ];
             }
 
-            return response()->json($detailedPokemons, 200);
+            return $detailedPokemons;
         }
 
-        return response()->json("Nenhum pokemon encontrado =(", 404);
+        return [];
 
     }
 
